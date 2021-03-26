@@ -73,7 +73,7 @@ export default class App extends Component {
       });
     }
   };
-
+  // adding a little comment
   componentDidMount = async () => {
     // console.log('app mounted');
     const apiKey = '95717d44';
