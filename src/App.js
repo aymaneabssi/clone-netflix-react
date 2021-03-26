@@ -3,10 +3,21 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home';
 import Header from './components/Header';
+import { Form, Container } from 'react-bootstrap';
 
 export default class App extends Component {
   state = {
+    query: '',
     movies: [],
+  };
+
+  handleInput = (e) => {
+    this.setState({ ...this.state, query: e.currentTarget.value });
+  };
+
+  handleSubmit = async (e) => {
+    e.prevenDefault();
+    console.log(e);
   };
 
   componentDidMount = async () => {
@@ -37,6 +48,17 @@ export default class App extends Component {
     return (
       <>
         <Header />
+        <Container fluid>
+          <Form onSubmit={this.handleSubmit}>
+            <Form.Control
+              onChange={this.handleInput}
+              className='my-3 '
+              type='text'
+              placeholder='Search For Movies'
+              value={this.state.query}
+            />
+          </Form>
+        </Container>
         <Home movies={this.state.movies} />
       </>
     );
