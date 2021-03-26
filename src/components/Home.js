@@ -3,6 +3,7 @@ import { Row, Container } from 'react-bootstrap';
 // import components
 import Cards from './Cards';
 
+
 const Home = ({ movies, queriedMovies }) => {
   if (queriedMovies.length > 0) {
     return (
@@ -25,6 +26,6 @@ const Home = ({ movies, queriedMovies }) => {
       </Container>
     );
   }
-};
+
 
 export default Home;

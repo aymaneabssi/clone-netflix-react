@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home';
 import Header from './components/Header';
 import { Form, Container, Alert } from 'react-bootstrap';
+import Footer from './components/Footer';
 
 export default class App extends Component {
   state = {
@@ -82,6 +83,10 @@ export default class App extends Component {
       });
     } catch (error) {
       console.log(error);
+      this.setState({
+        ...this.state.movies,
+        isError: true,
+      });
     }
   };
 
@@ -107,6 +112,8 @@ export default class App extends Component {
           movies={this.state.movies}
           queriedMovies={this.state.queriedElement}
         />
+
+        <Footer />
       </>
     );
   }
