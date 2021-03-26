@@ -28,31 +28,31 @@ const Footer = () => {
         <Row>
           <Col xs={12} sm={6} md={3}>
             <ul className="list-unstyled">
-              <li><a className="text-dark" href="#">Audio and Subtitles</a></li>
-              <li><a className="text-dark" href="#">Media Centre</a></li>
-              <li><a className="text-dark" href="#">Privacy</a></li>
-              <li><a className="text-dark" href="#">Contact Us</a></li>
+              <li><a className="text-dark" href="https://google.com">Audio and Subtitles</a></li>
+              <li><a className="text-dark" href="https://google.com">Media Centre</a></li>
+              <li><a className="text-dark" href="https://google.com">Privacy</a></li>
+              <li><a className="text-dark" href="https://google.com">Contact Us</a></li>
             </ul>
           </Col>
           <Col xs={12} sm={6} md={3}>
             <ul className="list-unstyled">
-              <li><a className="text-dark" href="#">Audio Description</a></li>
-              <li><a className="text-dark" href="#">Investor Relations</a></li>
-              <li><a className="text-dark" href="#">Legal Notices</a></li>
+              <li><a className="text-dark" href="https://google.com">Audio Description</a></li>
+              <li><a className="text-dark" href="https://google.com">Investor Relations</a></li>
+              <li><a className="text-dark" href="https://google.com">Legal Notices</a></li>
             </ul>
           </Col>
           <Col xs={12} sm={6} md={3}>
             <ul className="list-unstyled">
-              <li><a className="text-dark" href="#">Help Centre</a></li>
-              <li><a className="text-dark" href="#">Jobs</a></li>
-              <li><a className="text-dark" href="#">Cookie Preferences</a></li>
+              <li><a className="text-dark" href="https://google.com">Help Centre</a></li>
+              <li><a className="text-dark" href="https://google.com">Jobs</a></li>
+              <li><a className="text-dark" href="https://google.com">Cookie Preferences</a></li>
             </ul>
           </Col>
           <Col xs={12} sm={6} md={3}>
             <ul className="list-unstyled">
-              <li><a className="text-dark" href="#">Gift Cards</a></li>
-              <li><a className="text-dark" href="#">Terms of Use</a></li>
-              <li><a className="text-dark" href="#">Coorporate Information</a></li>
+              <li><a className="text-dark" href="https://google.com">Gift Cards</a></li>
+              <li><a className="text-dark" href="https://google.com">Terms of Use</a></li>
+              <li><a className="text-dark" href="https://google.com">Coorporate Information</a></li>
             </ul>
           </Col>
         </Row>
