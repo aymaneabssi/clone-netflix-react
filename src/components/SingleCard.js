@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 import { v4 as uuidv4 } from 'uuid';
+
 const SingleCard = ({ item }) => {
   return (
     <Col key={uuidv4()}>

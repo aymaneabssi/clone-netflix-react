@@ -21,6 +21,7 @@ export default class App extends Component {
       query: e.currentTarget.value,
       queryNotFound: false,
       queryErrorFromApi: '',
+      queriedElement: [],
     });
   };
 
