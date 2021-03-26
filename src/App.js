@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home';
+import Header from './components/Header';
 
 export default class App extends Component {
   state = {
@@ -35,6 +36,7 @@ export default class App extends Component {
   render() {
     return (
       <>
+        <Header />
         <Home movies={this.state.movies} />
       </>
     );
