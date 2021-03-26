@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home';
-import Footer from './components/Footer'
+import Footer from './components/Footer';
 import Header from './components/Header';
 import { Form, Container, Alert, Spinner } from 'react-bootstrap';
-
-
 
 export default class App extends Component {
   state = {
@@ -15,7 +13,7 @@ export default class App extends Component {
     movies: [],
     queryNotFound: false,
     queryErrorFromApi: '',
-    isLoading : false
+    isLoading: false,
   };
 
   handleInput = (e) => {
@@ -33,9 +31,9 @@ export default class App extends Component {
     // console.log(this.state.query);
     try {
       this.setState({
-      ...this.state,
-      isLoading: true
-    })
+        ...this.state,
+        isLoading: true,
+      });
       const resp = await fetch(
         `http://www.omdbapi.com/?apikey=95717d44&s=${this.state.query
           .toLowerCase()
@@ -52,7 +50,7 @@ export default class App extends Component {
             ...this.state,
             queriedElement: data.Search,
             queryNotFound: false,
-            isLoading: false
+            isLoading: false,
           });
           // console.log('queriedElement:', this.state.queriedElement);
         } else {
@@ -62,7 +60,7 @@ export default class App extends Component {
             ...this.state,
             queryNotFound: true,
             queryErrorFromApi: data.Error,
-            isLoading: false
+            isLoading: false,
           });
         }
       } else {
@@ -71,8 +69,8 @@ export default class App extends Component {
     } catch (error) {
       console.log(error);
       this.setState.apply({
-        isLoading: false
-      })
+        isLoading: false,
+      });
     }
   };
 
@@ -82,12 +80,11 @@ export default class App extends Component {
     const movies = ['harry potter', 'the lord of the rings', 'breaking bad'];
     const endpointAllData = `http://www.omdbapi.com/?apikey=${apiKey}&s=`;
 
-
     try {
       this.setState({
         ...this.state.movies,
-        isLoading : true,
-      })
+        isLoading: true,
+      });
       movies.forEach(async (movie) => {
         const resp = await fetch(endpointAllData + movie.replaceAll(' ', '+'));
         if (resp.ok) {
@@ -95,18 +92,18 @@ export default class App extends Component {
           const data = await resp.json();
           // console.log(data.Search);
           this.setState({ movies: [...this.state.movies, data.Search] });
-          console.log(this.state.movies);
-              this.setState({
-              ...this.state.movies,
-              isLoading : false,
-              })
+          // console.log(this.state.movies);
+          this.setState({
+            ...this.state.movies,
+            isLoading: false,
+          });
         } else {
           console.log('something went wrong');
           this.setState({
-              ...this.state.movies,
-              isLoading : false,
-              //isError : true
-          })
+            ...this.state.movies,
+            isLoading: false,
+            //isError : true
+          });
         }
       });
     } catch (error) {
@@ -114,16 +111,14 @@ export default class App extends Component {
       this.setState({
         ...this.state.movies,
         //isError : ture
-        isLoading: false
+        isLoading: false,
       });
     }
   };
 
   render() {
     return (
-        
       <>
-
         <Header />
         <Container fluid>
           <Form onSubmit={this.handleSubmit}>
@@ -139,25 +134,23 @@ export default class App extends Component {
             <Alert variant='warning'>{this.state.queryErrorFromApi}</Alert>
           )}
         </Container>
-      
-     {this.state.isLoading ? 
-      <div className="d-flex justify-content-center align-items-center">
-        <Spinner animation="grow" variant="light" />
-        <Spinner animation="grow" variant="light" />
-        <Spinner animation="grow" variant="light" />
-      </div> 
-      : 
-      <div>
 
-        <Home
-          movies={this.state.movies}
-          queriedMovies={this.state.queriedElement}
-        />
-        <Footer />
-      </div>}
-
-    </>
-        
+        {this.state.isLoading ? (
+          <div className='d-flex justify-content-center align-items-center'>
+            <Spinner animation='grow' variant='light' />
+            <Spinner animation='grow' variant='light' />
+            <Spinner animation='grow' variant='light' />
+          </div>
+        ) : (
+          <div>
+            <Home
+              movies={this.state.movies}
+              queriedMovies={this.state.queriedElement}
+            />
+            <Footer />
+          </div>
+        )}
+      </>
     );
   }
 }
