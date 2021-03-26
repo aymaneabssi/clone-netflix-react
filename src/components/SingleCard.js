@@ -9,7 +9,7 @@ const SingleCard = ({ item }) => {
   return (
     <>
       <Col onClick={handleShow} key={uuidv4()}>
-        <Card className='mb-1' style={{ width: '8rem' }}>
+        <Card className='my-3' style={{ width: '8rem' }}>
           <Card.Img variant='top' src={item.Poster} />
         </Card>
       </Col>
