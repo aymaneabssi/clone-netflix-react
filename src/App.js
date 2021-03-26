@@ -43,6 +43,7 @@ export default class App extends Component {
             queriedElement: data.Search,
             queryNotFound: false,
           });
+          console.log('queriedElement:', this.state.queriedElement);
         } else {
           // here i got data.Response = False so cange the state to display allert later
           console.log(data.Error);
@@ -74,7 +75,7 @@ export default class App extends Component {
           const data = await resp.json();
           // console.log(data.Search);
           this.setState({ movies: [...this.state.movies, data.Search] });
-          console.log(this.state.movies);
+          // console.log(this.state.movies);
         } else {
           console.log('something went wrong');
         }
@@ -102,7 +103,10 @@ export default class App extends Component {
             <Alert variant='warning'>{this.state.queryErrorFromApi}</Alert>
           )}
         </Container>
-        <Home movies={this.state.movies} />
+        <Home
+          movies={this.state.movies}
+          queriedMovies={this.state.queriedElement}
+        />
       </>
     );
   }
