@@ -20,6 +20,7 @@ export default class App extends Component {
       ...this.state,
       query: e.currentTarget.value,
       queryNotFound: false,
+      queryErrorFromApi: '',
     });
   };
 
