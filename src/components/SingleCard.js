@@ -13,11 +13,13 @@ const SingleCard = ({ item }) => {
           <Card.Img variant='top' src={item.Poster} />
         </Card>
       </Col>
-      <Modal imdbID={item.imdbID} show={show} onHide={handleClose}>
+      <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title></Modal.Title>
+          <Modal.Title>{item.imdbID}</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you're reading this text in a modal!</Modal.Body>
+        <Modal.Body>
+          Didn't have time to finish comment section but we're almost there 😁
+        </Modal.Body>
         <Modal.Footer>
           <Button variant='secondary' onClick={handleClose}>
             Close
