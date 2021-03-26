@@ -1,24 +1,27 @@
 import React from 'react';
 import { Row, Container, Col } from 'react-bootstrap';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import YouTubeIcon from '@material-ui/icons/YouTube';
+import InstagramIcon from '@material-ui/icons/Instagram';
 
 const Footer = () => {
   return (
       <Container>
-        <Container fluid className="mb-5">
+        <Container fluid className="my-3">
         <Row className="ml-4">
           <Col>
-          <a href="https://facebook.com">
-            fb icon 
+          <a className="text-dark" href="https://facebook.com">
+            <FacebookIcon />
           </a>
           </Col>
           <Col>
-          <a href="https://instagram.com">
-            ig icon
+          <a className="text-dark" href="https://instagram.com">
+            <InstagramIcon />
           </a>
           </Col>
           <Col>
-          <a href="https://youtube.com">
-            yt icon
+          <a className="text-dark" href="https://youtube.com">
+            <YouTubeIcon />
           </a>
           </Col>
         </Row>
