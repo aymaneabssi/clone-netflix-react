@@ -27,7 +27,7 @@ export default class App extends Component {
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(this.state.query);
+    // console.log(this.state.query);
     try {
       const resp = await fetch(
         `http://www.omdbapi.com/?apikey=95717d44&s=${this.state.query
@@ -36,7 +36,7 @@ export default class App extends Component {
       );
       if (resp.ok) {
         // this api resp always with ok so i have to check data.Response
-        console.log('resp ok');
+        // console.log('resp ok');
         const data = await resp.json();
         if (data.Response === 'True') {
           // console.log(data);
@@ -46,7 +46,7 @@ export default class App extends Component {
             queriedElement: data.Search,
             queryNotFound: false,
           });
-          console.log('queriedElement:', this.state.queriedElement);
+          // console.log('queriedElement:', this.state.queriedElement);
         } else {
           // here i got data.Response = False so cange the state to display allert later
           console.log(data.Error);

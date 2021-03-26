@@ -6,8 +6,8 @@ import { v4 as uuidv4 } from 'uuid';
 import SingleCard from './SingleCard';
 
 const Home = ({ movies, queriedMovies }) => {
-  console.log(queriedMovies);
-  console.log(movies);
+  // console.log(queriedMovies);
+  // console.log(movies);
 
   if (queriedMovies.length > 0) {
     return (
