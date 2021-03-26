@@ -1,10 +1,10 @@
 import React from 'react';
 import SingleCard from './SingleCard';
-const Cards = ({ item }) => {
+const Cards = ({ movie }) => {
   return (
     <>
-      {item.map((Obj) => (
-        <SingleCard Obj={Obj} />
+      {movie.map((item) => (
+        <SingleCard item={item} />
       ))}
     </>
   );

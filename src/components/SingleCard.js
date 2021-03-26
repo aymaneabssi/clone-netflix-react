@@ -1,13 +1,12 @@
 import React from 'react';
-import { Card } from 'react-bootstrap';
-const SingleCard = ({ Obj }) => {
+import { Card, Col } from 'react-bootstrap';
+const SingleCard = ({ item }) => {
   return (
-    <Card className='Col m-2' style={{ width: '18rem' }}>
-      <Card.Img variant='top' src={Obj.Poster} />
-      <Card.Body>
-        <Card.Title>{Obj.Title}</Card.Title>
-      </Card.Body>
-    </Card>
+    <Col>
+      <Card className='' style={{ width: '15rem' }}>
+        <Card.Img variant='top' src={item.Poster} />
+      </Card>
+    </Col>
   );
 };
 
