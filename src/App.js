@@ -2,10 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home';
+import Footer from './components/Footer'
 
 export default class App extends Component {
   state = {
     movies: [],
+    isLoading : false,
+    isError : false
   };
 
   componentDidMount = async () => {
@@ -29,6 +32,10 @@ export default class App extends Component {
       });
     } catch (error) {
       console.log(error);
+      this.setState({
+        ...this.state.movies,
+        isError: true
+      })
     }
   };
 
@@ -36,6 +43,7 @@ export default class App extends Component {
     return (
       <>
         <Home movies={this.state.movies} />
+        <Footer />
       </>
     );
   }
