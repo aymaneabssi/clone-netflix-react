@@ -38,3 +38,7 @@ code {
 img.card-img-top {
   height: 12.5rem;
 }
+
+.card {
+  cursor: pointer;
+}

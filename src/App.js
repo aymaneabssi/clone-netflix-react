@@ -24,12 +24,13 @@ export default class App extends Component {
       query: e.currentTarget.value,
       queryNotFound: false,
       queryErrorFromApi: '',
+      queriedElement: [],
     });
   };
 
   handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(this.state.query);
+    // console.log(this.state.query);
     try {
       this.setState({
       ...this.state,
@@ -42,7 +43,7 @@ export default class App extends Component {
       );
       if (resp.ok) {
         // this api resp always with ok so i have to check data.Response
-        console.log('resp ok');
+        // console.log('resp ok');
         const data = await resp.json();
         if (data.Response === 'True') {
           // console.log(data);
@@ -53,7 +54,7 @@ export default class App extends Component {
             queryNotFound: false,
             isLoading: false
           });
-          console.log('queriedElement:', this.state.queriedElement);
+          // console.log('queriedElement:', this.state.queriedElement);
         } else {
           // here i got data.Response = False so cange the state to display allert later
           console.log(data.Error);
