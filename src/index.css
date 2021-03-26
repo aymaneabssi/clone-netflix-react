@@ -34,3 +34,7 @@ code {
   margin-left: 40px;
   margin-top: 10px;
 }
+
+img.card-img-top {
+  height: 12.5rem;
+}
