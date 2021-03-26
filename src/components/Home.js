@@ -7,7 +7,7 @@ const Home = ({ movies }) => {
   return (
     <Container fluid>
       {movies.map((movie) => (
-        <Row className='overflow-auto flex-nowrap'>
+        <Row className='overflow-auto flex-nowrap my-2'>
           <Cards movie={movie} />
         </Row>
       ))}
