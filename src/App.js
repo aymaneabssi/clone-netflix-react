@@ -16,9 +16,9 @@ export default class App extends Component {
       movies.forEach(async (movie) => {
         const resp = await fetch(endpointAllData + movie.replaceAll(' ', '+'));
         if (resp.ok) {
-          console.log('resp ok');
+          // console.log('resp ok');
           const data = await resp.json();
-          console.log(data.Search);
+          // console.log(data.Search);
           this.setState({ movies: [...this.state.movies, data.Search] });
           console.log(this.state.movies);
         } else {
