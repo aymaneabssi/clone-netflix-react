@@ -11,5 +11,5 @@ const Cards = ({ movie }) => {
     </>
   );
 };
-
+// litte comment
 export default Cards;
